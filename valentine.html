@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Tharu ❤️</title>
+
+  <style>
+    /* Colorful gradient background with animation */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a2d5f2, #ffd3b6, #ffaaa5);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      cursor: none;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Enhanced card with colorful border */
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 35px;
+      width: 420px;
+      text-align: center;
+      box-shadow: 
+        0 25px 70px rgba(255, 105, 180, 0.3),
+        0 0 40px rgba(255, 215, 0, 0.2),
+        inset 0 0 30px rgba(255, 255, 255, 0.5);
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1.5s ease;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+      border-image: linear-gradient(45deg, #ff758c, #ff7eb3, #ff9a9e, #ffd6e7) 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Rainbow title effect */
+    h1 {
+      background: linear-gradient(45deg, #ff4b5c, #ff9a9e, #ff758c, #ff4b5c);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+      font-size: 32px;
+      animation: rainbowText 3s ease infinite;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p {
+      color: #555;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-style: italic;
+      color: #ff4b5c;
+      font-weight: bold;
+      font-size: 18px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Colorful buttons with shine effect */
+    button {
+      margin: 12px 8px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff4b5c, #ff758c, #ff9a9e);
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 
+        0 6px 20px rgba(255, 75, 92, 0.4),
+        0 0 15px rgba(255, 255, 255, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.5s;
+    }
+
+    button:hover {
+      transform: scale(1.12) rotate(1deg);
+      box-shadow: 
+        0 12px 30px rgba(255, 75, 92, 0.6),
+        0 0 25px rgba(255, 255, 255, 0.8);
+      background: linear-gradient(45deg, #ff9a9e, #ff4b5c, #ff758c);
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    #yesBtn {
+      background: linear-gradient(45deg, #ff4b5c, #ff0066);
+    }
+
+    #noBtn {
+      background: linear-gradient(45deg, #888, #aaa);
+    }
+
+    #questionSection {
+      display: none;
+      margin-top: 25px;
+      animation: fadeIn 1s ease;
+    }
+
+    #finalMessage {
+      display: none;
+      margin-top: 25px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Colorful photo gallery */
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .photos img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 
+        0 10px 25px rgba(255, 75, 92, 0.3),
+        0 0 15px rgba(255, 215, 0, 0.4);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 3px solid white;
+    }
+
+    .photos img:hover {
+      transform: scale(1.15) rotate(3deg);
+      box-shadow: 
+        0 15px 35px rgba(255, 75, 92, 0.5),
+        0 0 25px rgba(255, 215, 0, 0.6);
+      z-index: 10;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      opacity: 0.9;
+      background: rgba(0,0,0,0.2);
+      padding: 8px;
+      border-radius: 20px;
+      margin: 0 20px;
+    }
+
+    /* Multi-colored floating hearts */
+    .bg-heart {
+      position: absolute;
+      animation: floatUp linear infinite;
+      filter: drop-shadow(0 0 5px currentColor);
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from { 
+        transform: translateY(100vh) rotate(0deg); 
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      to { 
+        transform: translateY(-10vh) rotate(360deg); 
+        opacity: 0;
+      }
+    }
+
+    /* Colorful cursor hearts */
+    .cursor-heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 22px;
+      transform: translate(-50%, -50%);
+      animation: pop 0.8s ease forwards;
+      filter: drop-shadow(0 0 8px currentColor);
+      z-index: 1000;
+    }
+
+    @keyframes pop {
+      0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
+      50% { opacity: 1; transform: translate(-50%, -150%) scale(1.2); }
+      100% { opacity: 0; transform: translate(-50%, -200%) scale(1.5); }
+    }
+
+    /* Music button */
+    .music-btn {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 16px;
+      padding: 10px 18px;
+      border-radius: 25px;
+      background: linear-gradient(45deg, #ff9a9e, #ff758c);
+      z-index: 10;
+    }
+
+    /* Add confetti for "Yes" celebration */
+    .confetti {
+      position: fixed;
+      width: 15px;
+      height: 15px;
+      background: #ff4b5c;
+      opacity: 0;
+      animation: confettiFall 3s ease-out forwards;
+      z-index: 100;
+    }
+
+    @keyframes confettiFall {
+      0% { 
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg); 
+      }
+      100% { 
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg); 
+      }
+    }
+
+    /* Glowing effect for final message */
+    .glow {
+      animation: glowPulse 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4b5c; }
+      to { text-shadow: 0 0 20px #fff, 0 0 30px #ff758c, 0 0 40px #ff4b5c; }
+    }
+  </style>
+</head>
+
+<body>
+  <button class="music-btn" onclick="toggleMusic()">🎵 Music On</button>
+
+  <div class="card">
+    <h1>Hey Tharu ❤️</h1>
+
+    <p>
+      I just wanted you to know that you mean more to me than words can explain.
+      Every smile, every moment with you makes my life brighter and more colorful.
+      You're the rainbow in my sky. 🌈
+    </p>
+
+    <div class="signature">— From loving Manuu</div>
+
+    <button onclick="showQuestion()">Open My Heart 💌</button>
+
+    <div id="questionSection">
+      <h2 style="background: linear-gradient(45deg, #ff4b5c, #ff0066); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Can you be my Valentine? 💖</h2>
+      <p><i>(Please say Yes, my heart is racing!)</i></p>
+      <button id="yesBtn" onclick="sayYes()">YES 💗</button>
+      <button id="noBtn" onclick="changeNoText()">No</button>
+    </div>
+
+    <div id="finalMessage">
+      <div class="photos">
+        <img src="Her.jpeg" />
+        <img src="mochi-cat.gif" />
+        <img src="Me.jpeg" />
+      </div>
+
+      <p class="glow" style="color:#ff0066; font-size: 24px; font-weight: bold;">Yayyyyy! I knew it 😭❤️</p>
+
+      <p style="color:#555; font-size: 18px;">
+        Happy Valentine's Day, Tharuu! 💕<br>
+        Miss you a whole lot.<br>
+        Good luck with your exams, work hard my beauty.<br>
+        See you next Valentine as a Med school applicant. ❤️
+      </p>
+
+      <p style="font-size: 20px; margin: 20px 0;">──────── 💖 ────────</p>
+      
+      <p style="color: #ff4b5c; font-style: italic;">
+        P.S. You make every day feel like Valentine's Day
+      </p>
+    </div>
+  </div>
+
+  <footer>Made with 💖 by Manu for Tharu</footer>
+
+  <audio id="bgMusic" loop>
+    <source src="Nil Nayaniye Guitar.mpeg" type="audio/mpeg">
+  </audio>
+
+  <script>
+    let noTexts = [
+      "Are you sure?",
+      "Seems like you don't like to be… but please think again",
+      "Can you confirm again pls… I really need you",
+      "Please think again",
+      "Give it another thought",
+      "Are you absolutely sure?",
+      "This could be a mistake… have a heart?"
+    ];
+
+    let index = 0;
+
+    function showQuestion() {
+      document.getElementById("questionSection").style.display = "block";
+    }
+
+    function changeNoText() {
+      if (index < noTexts.length) {
+        document.getElementById("noBtn").innerText = noTexts[index];
+        index++;
+      }
+
+      let yesBtn = document.getElementById("yesBtn");
+      let scale = 1 + index * 0.15;
+      yesBtn.style.transform = `scale(${scale})`;
+      
+      // Make "Yes" button more vibrant
+      yesBtn.style.background = `linear-gradient(45deg, #ff0066, #ff4b5c)`;
+      yesBtn.style.boxShadow = `0 8px 25px rgba(255, 0, 102, 0.6)`;
+    }
+
+    function sayYes() {
+      document.getElementById("questionSection").style.display = "none";
+      document.getElementById("finalMessage").style.display = "block";
+      
+      // Create colorful confetti celebration
+      createConfetti();
+      
+      // Add celebration text animation
+      setTimeout(() => {
+        document.querySelector('#finalMessage p').classList.add('glow');
+      }, 500);
+    }
+
+    /* Multi-colored floating hearts */
+    const heartColors = ['#ff4b5c', '#ff9a9e', '#ff758c', '#ffb8c6', '#ff0066', '#ff9aa2'];
+    
+    for (let i = 0; i < 35; i++) {
+      let heart = document.createElement("div");
+      heart.className = "bg-heart";
+      heart.innerHTML = ["❤", "💖", "💗", "💓", "💞", "💕"][Math.floor(Math.random() * 6)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 8 + "s";
+      heart.style.fontSize = 18 + Math.random() * 25 + "px";
+      heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+      heart.style.opacity = 0.3 + Math.random() * 0.7;
+      document.body.appendChild(heart);
+    }
+
+    /* Colorful cursor hearts */
+    const cursorHearts = ["💗", "💖", "❤", "💓", "💞"];
+    const cursorColors = ['#ff4b5c', '#ff9a9e', '#ff758c', '#ff0066', '#ff9aa2'];
+    
+    document.addEventListener("mousemove", e => {
+      let heart = document.createElement("div");
+      heart.className = "cursor-heart";
+      heart.style.left = e.clientX + "px";
+      heart.style.top = e.clientY + "px";
+      heart.innerHTML = cursorHearts[Math.floor(Math.random() * cursorHearts.length)];
+      heart.style.color = cursorColors[Math.floor(Math.random() * cursorColors.length)];
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 800);
+    });
+
+    /* Confetti celebration */
+    function createConfetti() {
+      const colors = ['#ff4b5c', '#ff9a9e', '#ff758c', '#ffd3b6', '#a2d5f2', '#ffaaa5'];
+      
+      for (let i = 0; i < 150; i++) {
+        let confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = 10 + Math.random() * 15 + "px";
+        confetti.style.height = 10 + Math.random() * 15 + "px";
+        confetti.style.borderRadius = Math.random() > 0.5 ? "50%" : "0";
+        confetti.style.animationDelay = Math.random() * 2 + "s";
+        confetti.style.animationDuration = 1 + Math.random() * 2 + "s";
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 3000);
+      }
+    }
+
+    /* music toggle */
+    let music = document.getElementById("bgMusic");
+    let playing = false;
+
+    function toggleMusic() {
+      const btn = event.target;
+      if (!playing) {
+        music.play().catch(e => console.log("Autoplay prevented:", e));
+        playing = true;
+        btn.innerText = "🎵 Music On";
+        btn.style.background = "linear-gradient(45deg, #4CAF50, #8BC34A)";
+      } else {
+        music.pause();
+        playing = false;
+        btn.innerText = "🔇 Music Off";
+        btn.style.background = "linear-gradient(45deg, #ff9a9e, #ff758c)";
+      }
+    }
+  </script>
+</body>
+</html>
